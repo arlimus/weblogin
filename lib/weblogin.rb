@@ -1,4 +1,5 @@
 require 'uri'
+require 'weblogin/loginhelper'
 
 # quicly get all submodules
 # http://www.natontesting.com/2010/06/30/how-to-get-the-submodules-of-a-ruby-module/
@@ -60,6 +61,20 @@ class Weblogin
     # invoke the handler to log us in
     puts "using helper: #{h.class}"
     h.login_with_response first
+  end
+
+  private
+
+  def add_methods_to_provider c
+    # get the base name of the provider
+    name = c.name.sub(/.*::/,'').downcase
+    # add login helper
+    c.class_eval <<-EOF
+      def log; @log ||= Logging.logger[#{c}]; end
+      def name; #{name.inspect} end
+      include ::LoginHelper
+      EOF
+    c
   end
 
 end
