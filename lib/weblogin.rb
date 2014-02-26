@@ -18,7 +18,7 @@ module LogInto
 end
 
 class Weblogin
-  def self.version; 0.4 end
+  def self.version; "0.4.0" end
 
   def initialize
     # include all helper modules
