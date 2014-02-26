@@ -4,7 +4,7 @@ A tiny helper to quickly log into a web portal.
 
 When you first use it, e.g. for HotSpot:
 
-    $ weblogin start                                                                                                               ✘1 0m master[07a4197]
+    $ weblogin start
     using helper: LogInto::HotSpot
     Enter username for hotspot: 4915112345678@t-mobile.de
     Enter password for hotspot (will not be shown): ***********
