@@ -10,7 +10,7 @@ When you first use it, e.g. for HotSpot:
     Enter password for hotspot (will not be shown): ***********
     Finished
 
-And login after that will not ask you for your credentials again. They are stored in '~/.weblogin.conf'.
+And login after that will not ask you for your credentials again. They are stored in `~/.weblogin.conf`.
 
 Currently supports:
 
