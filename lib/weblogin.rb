@@ -22,17 +22,18 @@ class Weblogin
   def initialize
     # include all helper modules
     # 1. collect all folders where helper modules are
-    global = __FILE__.sub(/.rb$/,'.d')
+    global = __FILE__.sub(/.rb$/,'')
     dirs = [global]
     # 2. include all helper files from the folders
     dirs.each do |d|
       $:.unshift(d)
-      Dir[File::join(d,"*.rb")].
+      Dir[File::join(d,"providers","*.rb")].
         map{|i| i.sub /\.rb$/, ''}.
         each{|i| require i}
     end
     # 3. instantiate helper modules
     @helpers = LogInto.subclasses.map do |c|
+        add_methods_to_provider(c)
         c.new
       end
   end
