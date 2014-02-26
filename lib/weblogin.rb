@@ -43,7 +43,7 @@ class Weblogin
 
     # try to log into a typical site
     first = RestClient.get "http://www.google.com"
-    if first.args[:url] == "http://www.google.com"
+    if first.args[:url].to_s.start_with? "http://www.google"
       puts "looks good, you can reach ya'r internet mate"
       exit 0
     end
