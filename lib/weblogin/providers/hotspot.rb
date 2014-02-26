@@ -40,7 +40,8 @@ class LogInto::HotSpot
       }
     rescue => e
       # it may break out, but this usually also happends for HTTP 302
-      puts "Broke out: #{e.response}"
+      puts "Finished"
+      puts e.response if e.response.to_s.length > 0
     end
 
   end
