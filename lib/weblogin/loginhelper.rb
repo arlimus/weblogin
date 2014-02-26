@@ -70,14 +70,14 @@ module LoginHelper
     File.chmod(0600, path)
   end
 
-  def get_open prompt, field
-    get_or_set field do
+  def get_open prompt, field, group
+    get_or_set field, group do
       cli.ask(prompt){|q| q.echo = true}.strip
     end
   end
 
-  def get_secret prompt, field
-    get_or_set field do
+  def get_secret prompt, field, group
+    get_or_set field, group do
       cli.ask(prompt){|q| q.echo = '*'}.strip
     end
   end
