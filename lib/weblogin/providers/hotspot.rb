@@ -29,8 +29,8 @@ class LogInto::HotSpot
     # get all of the fields from the login form in simple directory
     fields = Hash[ hform.css("input").map{|i| [i.attributes["name"].value, i.attributes["value"].to_s]} ]
     # add our two fields
-    fields["username"] = $user
-    fields["password"] = $pw
+    fields["username"] = provider_user "hotspot"
+    fields["password"] = provider_password "hotspot"
     
     # now send the login to the hotspot site
     begin 
