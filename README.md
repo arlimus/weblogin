@@ -6,8 +6,8 @@ When you first use it, e.g. for HotSpot:
 
     $ weblogin start
     using helper: LogInto::HotSpot
-    Enter username for hotspot: 4915112345678@t-mobile.de
-    Enter password for hotspot (will not be shown): ***********
+    Enter username for Telekom HotSpot: 4915112345678@t-mobile.de
+    Enter password for Telekom HotSpot (will not be shown): ***********
     Finished
 
 And login after that will not ask you for your credentials again. They are stored in `~/.weblogin.conf`.
