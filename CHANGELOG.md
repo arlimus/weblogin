@@ -1,3 +1,10 @@
+## 0.4
+
+* feature: read credentials from file
+* feature: support new hotspot style login (which redirects to a landing page for guest login)
+* improvement: correctly detect if we are already logged in
+* bugfix: transfer group to every field operation for loginhelper
+
 ## 0.3
 
 * feature: weblogin for airport hotspot added
