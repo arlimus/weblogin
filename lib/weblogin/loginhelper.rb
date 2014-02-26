@@ -10,13 +10,15 @@ module LoginHelper
     @config_file ||= "~/.weblogin.conf"
   end
 
-  def provider_user provider = nil
+  def user_for provider = nil
     return nil if provider.nil?
+    @users ||= {}
     @users[provider] ||= get_open("Enter username for #{provider}: ", "user", provider)
   end
 
-  def provider_password provider = nil
+  def password_for provider = nil
     return nil if provider.nil?
+    @passwords ||= {}
     @passwords[provider] ||= get_secret("Enter password for #{provider} (will not be shown): ", "password", provider)
   end
 
