@@ -1,3 +1,8 @@
+## 0.5.0
+
+* bugfix: add missing dependencies
+* bugfix: remove unnecessary pry
+
 ## 0.4.0
 
 * feature: read credentials from file
